@@ -12,9 +12,10 @@ function validationForm(event ) {
         alert('All fields should be filled out')
         return 
     }
-    const userData = {};
-    userData.email = userEmail ;
-    userData.password = userPassword;
+    const userData = {
+    email: userEmail,
+    password: userPassword};
+    
    
     event.target.reset();
    

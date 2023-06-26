@@ -8,12 +8,12 @@ const inputNumberEl = document.querySelector('input');
 const createBtnHandler = document.querySelector('[data-create]');
 const destroyBtnHandler = document.querySelector('[data-destroy]');
 const boxesMain = document.querySelector('#boxes');
-
+let valueSize = 20; 
 
 createBtnHandler.addEventListener('click', onClickCreate)
 
 function createBoxes(amount) {
-   let valueSize = 20; 
+   
   for (let i = 0; i < amount; i++ ) {
     const boxDivEl = document.createElement("div");
      valueSize += 10;
@@ -21,7 +21,9 @@ function createBoxes(amount) {
     boxDivEl.style.height = `${valueSize}px`;
     boxDivEl.style.backgroundColor = getRandomHexColor();
     boxesMain.append(boxDivEl);
+    
   }
+  return boxesMain;
 }
 
 function onClickCreate() {

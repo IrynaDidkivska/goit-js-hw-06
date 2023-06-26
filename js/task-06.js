@@ -3,14 +3,17 @@ const onInputEl = document.querySelector('#validation-input');
 
 onInputEl.addEventListener('blur', symbolCheck);
 
-function symbolCheck({ target }) {
-    const inputValueLength = target.value.length;
-    const expectedLength = Number(target.dataset.length);
+function symbolCheck(event) {
+    const { target: { value, dataset, classList } } = event;
+    const inputValueLength = value.length;
+    console.dir(value);
+    const expectedLength = Number(dataset.length);
+        console.dir(dataset);
     if (inputValueLength === expectedLength) {
-        target.classList.add("valid");
-        target.classList.remove("invalid");
+       classList.add("valid");
+        classList.remove("invalid");
     } else {
-        target.classList.remove("valid");
-        target.classList.add( "invalid");
+        classList.remove("valid");
+        classList.add( "invalid");
     }
 }

@@ -9,8 +9,8 @@ onDecrementBtn.addEventListener('click', updateCounter);
 
 onIncrementBtn.addEventListener('click', updateCounter);
 
-function updateCounter({ target}) { 
-    if (target.dataset.action === "decrement") {
+function updateCounter({ target: { dataset} }) { 
+    if (dataset.action === "decrement") {
         counterValue -= 1;
     }
     else {
