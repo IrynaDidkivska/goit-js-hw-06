@@ -9,6 +9,7 @@ const createBtnHandler = document.querySelector('[data-create]');
 const destroyBtnHandler = document.querySelector('[data-destroy]');
 const boxesMain = document.querySelector('#boxes');
 let valueSize = 20; 
+const boxElements = [];
 
 createBtnHandler.addEventListener('click', onClickCreate)
 
@@ -19,10 +20,10 @@ function createBoxes(amount) {
      valueSize += 10;
     boxDivEl.style.width = `${valueSize}px`;
     boxDivEl.style.height = `${valueSize}px`;
-    boxDivEl.style.backgroundColor = getRandomHexColor();
-    boxesMain.append(boxDivEl);
-    
+    boxDivEl.style.backgroundColor = getRandomHexColor(); 
+    boxElements.push(boxDivEl);
   }
+ boxesMain.append(...boxElements);
   return boxesMain;
 }
 
